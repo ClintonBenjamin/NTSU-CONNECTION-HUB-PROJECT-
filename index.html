@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Connection Hub - NTSU</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">NTSU</div>
+            <nav class="nav" role="navigation">
+                <a href="#home">Home</a>
+                <a href="#about">About us</a>
+                <a href="#opportunities">Opportunities</a>
+                <a href="#support">Support & advice</a>
+                <a href="#connection-hub" aria-current="page">Connection Hub</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Feeling isolated?</h1>
+            <h2>Can't find study partners?</h2>
+            <p>Connect with your NTU community through our Student Connection Hub - find study partners, share skills, and discover societies that match your interests.</p>
+            <a href="#demo" class="cta-button" role="button">Try the demo now</a>
+        </div>
+    </section>
+
+    <!-- Interactive Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <h2 class="section-title">See How It Works</h2>
+            <div class="demo-container">
+                <form class="profile-form" id="connectionForm" aria-label="Student profile demo form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g., Alex Smith" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course">Course of Study</label>
+                        <select id="course" name="course" required>
+                            <option value="">Select your course</option>
+                            <option value="computer-science">Computer Science</option>
+                            <option value="business">Business</option>
+                            <option value="psychology">Psychology</option>
+                            <option value="engineering">Engineering</option>
+                            <option value="art-design">Art & Design</option>
+                            <option value="law">Law</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="year">Year of Study</label>
+                        <select id="year" name="year" required>
+                            <option value="">Select year</option>
+                            <option value="1">Year 1</option>
+                            <option value="2">Year 2</option>
+                            <option value="3">Year 3</option>
+                            <option value="postgrad">Postgraduate</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="campus">Campus</label>
+                        <select id="campus" name="campus" required>
+                            <option value="">Select campus</option>
+                            <option value="clifton">Clifton Campus</option>
+                            <option value="city">City Campus</option>
+                            <option value="brackenhurst">Brackenhurst Campus</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>What are you looking for? (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="study-partner" name="goals" value="study">
+                                <label for="study-partner">Study Partners</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="skill-exchange" name="goals" value="skills">
+                                <label for="skill-exchange">Skills Exchange</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="societies" name="goals" value="societies">
+                                <label for="societies">Society Connections</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="interests">Interests & Skills</label>
+                        <textarea id="interests" name="interests" rows="3" placeholder="e.g., Photography, Python programming, Guitar, Football, Cooking..."></textarea>
+                    </div>
+                </form>
+                
+                <button class="cta-button" onclick="generateMatches()" id="findMatchesBtn">Find My Connections</button>
+                
+                <!-- Results Section -->
+                <div id="results" class="results hidden" role="region" aria-label="Connection matches">
+                    <h3>Your Potential Connections</h3>
+                    <div id="matchesContainer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Three Ways to Connect</h2>
+            <div class="features-grid">
+                <div class="feature-card pink">
+                    <h3>Study Partners</h3>
+                    <p>Find students in your course who share your study style and schedule. Form study groups, share notes, and tackle assignments together.</p>
+                    <a href="#" class="feature-button">Learn more</a>
+                </div>
+                
+                <div class="feature-card orange">
+                    <h3>Skills Exchange</h3>
+                    <p>Teach what you know, learn what you need. From coding to cooking, language exchange to music lessons - students helping students.</p>
+                    <a href="#" class="feature-button">Learn more</a>
+                </div>
+                
+                <div class="feature-card purple">
+                    <h3>Society Discovery</h3>
+                    <p>Get matched with societies and clubs based on your interests. Meet like-minded people and discover new passions.</p>
+                    <a href="#" class="feature-button">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Section -->
+    <section class="safety">
+        <div class="container">
+            <h2 class="section-title">Safe & Secure Connections</h2>
+            <div class="safety-grid">
+                <div class="safety-item">
+                    <div class="safety-icon">🛡️</div>
+                    <h4>Verified Students Only</h4>
+                    <p>All users verified with NTU email addresses</p>
+                </div>
+                
+                <div class="safety-item">
+                    <div class="safety-icon">🏫</div>
+                    <h4>Public Spaces First</h4>
+                    <p>Meetings suggested in campus libraries and NTSU spaces</p>
+                </div>
+                
+                <div class="safety-item">
+                    <div class="safety-icon">🚨</div>
+                    <h4>Report & Block</h4>
+                    <p>One-click reporting with 24-hour response guarantee</p>
+                </div>
+                
+                <div class="safety-item">
+                    <div class="safety-icon">👥</div>
+                    <h4>Group-Focused</h4>
+                    <p>Encouraged 3+ person study groups over 1-on-1 meetings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
